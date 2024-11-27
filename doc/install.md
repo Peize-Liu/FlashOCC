@@ -3,18 +3,18 @@ step 1. Install environment for pytorch training
 ```
 conda create --name FlashOcc python=3.8.5
 conda activate FlashOcc
+apt-get install  -y python3.8 python3-pip python-is-python3 libgl1-mesa-glx  libglib2.0-0 libsm6 libxrender1 libxext6 ninja-build
+<!-- apt-get install python3-pip
+apt install libgl1-mesa-glx 
+apt-get install -y libglib2.0-0 libsm6 libxrender1 libxext6
+apt-get install ninja-build -->
+pip install Ninja
+
 pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
-pip install mmcv-full==1.5.3
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
+pip install mmcv-full==1.5.3 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.10.0/index.html
 pip install mmdet==2.25.1
 pip install mmsegmentation==0.25.0
-
-sudo apt-get install python3-dev 
-sudo apt-get install libevent-dev
-sudo apt-get groupinstall 'development tools'
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-export CUDA_ROOT=/usr/local/cuda
-pip install pycuda
 
 pip install lyft_dataset_sdk
 pip install networkx==2.2
